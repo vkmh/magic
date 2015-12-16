@@ -13,7 +13,7 @@ def ingest(import_data):
     expansion = get_expansion(json_data['expansion'])
     link_source_expansion(source, expansion)
 
-    Stock.objects.filter(source=source, card__expansion=expansion).update(is_active=False)
+    #Stock.objects.filter(source=source, card__expansion=expansion).update(is_active=False)
 
     for json_card in json_data['cards']:
         name = json_card['name']
@@ -21,6 +21,7 @@ def ingest(import_data):
         medium = json_card['medium']
         low = json_card['low']
 
+        print name
         card = get_card(name, expansion)
         Stock.objects.create(
             card=card,

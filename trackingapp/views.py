@@ -34,11 +34,6 @@ def api(request, api_key, template_name="api.html"):
         attributes['error'] = 'Incorect api key'
         return render(request, template_name, attributes)
 
-    # import_data = request.GET.get('d')
-    # if import_data:
-    #     ingest(import_data)
-
-    print request.POST
     import_data = request.POST.get('d')
     if import_data:
         ingest(import_data)

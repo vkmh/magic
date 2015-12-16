@@ -3,7 +3,7 @@ import json
 
 from datetime import datetime
 
-from library import re, text, web
+from library import re, text
 from urlparse import urljoin
 
 
@@ -65,5 +65,5 @@ for card_source in cards:
     export_data['cards'].append(card_data)
 
 d = json.dumps(export_data)
-post = {'d': web.urlencode(d)}
+post = {'d': d}
 requests.post(export_url, data=post)

@@ -24,7 +24,7 @@ class SourceExpansion(models.Model):
 
 
 class Card(models.Model):
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=50)
     expansion = models.ForeignKey(Expansion)
 
     def __unicode__(self):
