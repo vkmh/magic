@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block header %}Sources{% endblock %}
+
+{% block body %}
+    {% for source in sources %}
+        <a href="{% url 'source' source.id %}">{{ source.name }}</a>
+    {% endfor %}
+{% endblock %}

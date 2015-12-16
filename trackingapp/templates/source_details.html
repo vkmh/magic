@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block header %}{{ source.name }} Details{% endblock %}
+
+{% block body %}
+    <table class="table striped">
+        <tr>
+            <th>Name:</th><td>{{ source.name }}</td>
+        </tr>
+        <tr>
+            <th>URL:</th><td><a href="{{ source.url }}">{{ source.url }}</a></td>
+        </tr>
+        <tr>
+            <th>Expansions:</th>
+            <td>
+                {% if not source_expansions %}
+                    no expansions found
+                {% else %}
+                    {% for source_expansion in source_expansions %}
+                        <a href="{% url 'expansion' source_expansion.expansion.id %}">{{ source_expansion.expansion }}</a>
+                    {% endfor %}
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}
