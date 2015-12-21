@@ -125,4 +125,5 @@ API_KEY = 'b018c42e6e6f79568a2844440c16f6fd'
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = STATIC_URL + 'media/'
 

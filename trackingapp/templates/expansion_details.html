@@ -7,17 +7,7 @@
         <tr>
             <th>Name:</th><td>{{ expansion.name }}</td>
         </tr>
-        <tr>
-            <th>Cards:</th>
-            <td>
-                {% if not cards %}
-                    no cards found
-                {% else %}
-                    {% for card in cards %}
-                        {{ card.name }}
-                    {% endfor %}
-                {% endif %}
-            </td>
-        </tr>
     </table>
+
+    {% include 'price_points_shard.html' %}
 {% endblock %}

@@ -1,0 +1,32 @@
+<table class="table table-striped table-hover dataTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            {% for date in price_point_dates %}
+                <th>{{ date|date:"Y-m-d" }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    {% for price_point in price_points %}
+        <tr>
+            <td>
+                <a href="">{{ price_point.name }}</a>
+            </td>
+            {% for price in price_point.price_points %}
+                <td>
+                    {% ifchanged price %}
+                        {% if not forloop.first %}
+                            <b>
+                        {% endif %}
+                    {% endifchanged %}
+                    {{ price|floatformat:2 }}
+                    {% ifchanged price %}
+                        {% if not forloop.first %}
+                            </b>
+                        {% endif %}
+                    {% endifchanged %}
+                </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>

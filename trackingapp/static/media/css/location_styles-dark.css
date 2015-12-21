@@ -1,0 +1,19 @@
+.comment-time {
+  padding-left: 5px;
+  font-size: 10px;
+  color: #bbbbbb;
+}
+.comment-box {
+  margin-bottom: 10px;
+  padding: 3px;
+}
+.set-bg {
+  background-color: #eee;
+}
+thead {
+  background-color: #333;
+}
+.percent-toggle {
+  text-align: center;
+  background: #333;
+}
